@@ -1,0 +1,11 @@
+{
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "bracketSameLine": true,
+  "overrides": [
+    {
+      "files": ["*.{ts,tsx,graphql}"],
+      "processor": "@graphql-eslint/graphql",
+      "extends": ["plugin:prettier/recommended"]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "extends": "next/core-web-vitals",
+  "overrides": [
+    {
+      "files": ["*.{graphql}"],
+      "processor": "@graphql-eslint/graphql",
+      "extends": ["plugin:prettier/recommended"]
+    },
+    {
+      "files": ["./**/*schema.ts"],
+      "parser": "@graphql-eslint/eslint-plugin",
+      "plugins": ["@graphql-eslint"],
+      "rules": {
+        "@graphql-eslint/known-type-names": "error"
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-text-size-adjust: none;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .skeleton {
+    will-change: background-position;
+    animation: skeleton 1.8s ease-in-out infinite;
+    background-image: linear-gradient(
+      105deg,
+      transparent 0%,
+      transparent 40%,
+      #404040 50%,
+      transparent 60%,
+      transparent 100%
+    );
+    background-size: 200% auto;
+    background-repeat: no-repeat;
+    background-position-x: -50%;
+  }
+
+  .light-skeleton {
+    will-change: background-position;
+    animation: skeleton 1.8s ease-in-out infinite;
+    background-image: linear-gradient(
+      105deg,
+      transparent 0%,
+      transparent 40%,
+      #c1c1c1 50%,
+      transparent 60%,
+      transparent 100%
+    );
+    background-size: 200% auto;
+    background-repeat: no-repeat;
+    background-position-x: -50%;
+  }
+}

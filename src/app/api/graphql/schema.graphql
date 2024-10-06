@@ -1,0 +1,104 @@
+scalar DateTime
+scalar PositiveFloat
+scalar PositiveInt
+scalar URL
+
+enum STORES_SORTS {
+  MOST_RELEVANT
+  HIGHEST_SCORE
+  LOWEST_SCORE
+  MOST_EXPERIENCES
+}
+
+enum EXPERIENCES_SORTS {
+  MOST_RELEVANT
+  NEWEST
+  HIGHEST_SCORE
+  LOWEST_SCORE
+}
+
+type Pagination {
+  currentPage: Int
+  pageSize: Int
+  totalPages: Int
+}
+
+type Store {
+  id: ID!
+  name: String!
+  website: URL
+  telegram: String
+  instagram: String
+  activityField: String!
+  score: Float!
+  view: Int!
+  experiencesCount: Int!
+  experiences: [Experience]
+  createdAt: DateTime
+}
+
+type PaginationStores {
+  pageInfo: Pagination!
+  data: [Store]!
+}
+
+type Experience {
+  id: String!
+  title: String!
+  body: String!
+  product: String
+  orderDate: DateTime
+  score: PositiveFloat!
+  createdAt: DateTime!
+
+  storeId: ID!
+  Store: Store!
+}
+
+type PaginationExperiences {
+  pageInfo: Pagination!
+  data: [Experience]!
+}
+
+input createStoreInput {
+  name: String!
+  website: URL
+  telegram: String
+  instagram: String
+  activityField: String!
+}
+
+input createExperienceInput {
+  title: String!
+  body: String!
+  product: String
+  orderDate: DateTime
+  score: PositiveInt!
+  storeId: ID!
+}
+
+type Query {
+  stores(
+    page: Int
+    pageSize: Int
+    search: String
+    sort: STORES_SORTS
+  ): PaginationStores!
+  store(id: ID!): Store!
+  popularStores: [Store]!
+  experiences(
+    page: Int
+    pageSize: Int
+    search: String
+    sort: EXPERIENCES_SORTS
+    storeId: ID
+  ): PaginationExperiences!
+  experience(id: ID!): Experience!
+  lastExperiences: [Experience]!
+  lastExperiencesByStore(id: ID!): [Experience]!
+}
+
+type Mutation {
+  createStore(input: createStoreInput): Store
+  createExperience(input: createExperienceInput): Experience
+}
