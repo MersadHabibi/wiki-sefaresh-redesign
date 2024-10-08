@@ -25,6 +25,7 @@
     "dotenv": "^16.4.5",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "framer-motion": "^11.11.4",
     "graphql-config": "^5.1.2",
     "graphql-eslint": "^1.5.2",
     "graphql-scalars": "^1.23.0",

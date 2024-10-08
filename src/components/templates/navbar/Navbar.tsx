@@ -4,6 +4,7 @@ import { FMorabba } from "@/config/fonts";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import MobileSidebarMenu from "./MobileSidebarMenu";
+import * as motion from "framer-motion/client";
 
 const links = [
   {
@@ -30,7 +31,11 @@ const links = [
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 h-16 w-full shrink-0 border-b border-b-neutral-4 bg-neutral-1/50 backdrop-blur-md sm:h-20">
+    <motion.header
+      initial={{ top: "-100%" }}
+      animate={{ top: "0" }}
+      transition={{ duration: 0.7 }}
+      className="fixed left-0 right-0 top-0 z-50 !h-16 w-full shrink-0 overflow-hidden border-b border-b-neutral-4 bg-neutral-1/50 backdrop-blur-[4px] sm:!h-20">
       <div className="mx-auto flex h-full max-w-[1700px] items-center justify-between px-5">
         <div className="flex items-center gap-x-4">
           <Logo />
@@ -72,6 +77,6 @@ export default function Navbar() {
           <MobileSidebarMenu />
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 }

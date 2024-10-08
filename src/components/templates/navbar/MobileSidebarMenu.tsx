@@ -135,7 +135,7 @@ export default function MobileSidebarMenu() {
                     href={"/stores/new-store"}
                     className={cn(
                       menuLinkStyles,
-                      "btn justify-start border-none bg-gray-4 text-white hover:bg-black",
+                      "btn justify-start border border-gray-4 bg-transparent text-gray-4 hover:bg-gray-4 hover:text-white",
                     )}>
                     <HousePlusIcon className="size-6" />
                     <span>ثبت فروشگاه</span>
@@ -146,7 +146,7 @@ export default function MobileSidebarMenu() {
                     href={"/experiences/new-experience"}
                     className={cn(
                       menuLinkStyles,
-                      "btn btn-primary justify-start bg-primary-default text-white hover:bg-primary-4",
+                      "btn justify-start border-none bg-gray-4 text-white hover:bg-black",
                     )}>
                     <UserRoundPenIcon className="size-6" />
                     <span>ثبت تجربه</span>
