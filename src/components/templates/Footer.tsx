@@ -39,8 +39,8 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="sticky top-full bg-neutral-200 py-20 dark:bg-neutral-900">
-      <div className="container flex flex-col gap-x-20 gap-y-14 md:flex-row">
+    <footer className="sticky top-full border-t border-neutral-4 bg-white ">
+      <div className="container flex flex-col gap-x-20 gap-y-14 py-20 md:flex-row">
         <div className="shrink-0">
           <p className="text-base font-semibold sm:text-xl">
             در شبکه های اجتماعی از ما حمایت کنید 💪
@@ -68,12 +68,23 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-blue-600 hover:underline dark:text-blue-500 sm:text-lg">
+                className="text-primary-default hover:underline sm:text-lg">
                 {link.value}
               </Link>
             ))}
           </div>
         </div>
+      </div>
+      <div className="container flex items-center justify-center border-t border-neutral-4 py-4">
+        <p>
+          طراحی شده توسط{" "}
+          <Link
+            href={"https://mersadhabibi.ir"}
+            className="font-medium text-primary-default"
+            target="_blank">
+            مرصاد حبیبی
+          </Link>
+        </p>
       </div>
     </footer>
   );
