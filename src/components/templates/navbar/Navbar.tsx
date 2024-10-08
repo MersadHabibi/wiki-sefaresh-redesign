@@ -1,56 +1,74 @@
-import ChangeThemeBtn from "@/components/modules/ChangeThemeBtn";
 import Logo from "@/components/modules/Logo";
 import NavLink from "@/components/modules/NavLink";
-import MobileSidebarMenu from "./MobileSidebarMenu";
-import { cn } from "@/lib/utils";
 import { FMorabba } from "@/config/fonts";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
+import MobileSidebarMenu from "./MobileSidebarMenu";
+
+const links = [
+  {
+    id: 1,
+    value: "صفحه اصلی",
+    href: "/",
+  },
+  {
+    id: 2,
+    value: "تجربه ها",
+    href: "/experiences",
+  },
+  {
+    id: 3,
+    value: "فروشگاه ها",
+    href: "/stores",
+  },
+  {
+    id: 4,
+    value: "درباره ما",
+    href: "/about-us",
+  },
+];
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 h-16 w-full shrink-0 bg-neutral-200 dark:bg-neutral-900 sm:h-20">
-      <div className="container flex h-full items-center justify-between">
-        <div className="flex items-center gap-x-2">
+    <header className="sticky top-0 z-50 h-16 w-full shrink-0 border-b border-b-neutral-4 bg-neutral-1/50 backdrop-blur-md sm:h-20">
+      <div className="mx-auto flex h-full max-w-[1700px] items-center justify-between px-5">
+        <div className="flex items-center gap-x-4">
           <Logo />
           <Link
             href={"/"}
             className={cn(
-              "text-balance pb-1 text-xl font-bold text-blue-700 dark:text-primary-dark sm:text-2xl",
+              "text-balance pb-1 text-xl font-bold text-primary-default sm:text-2xl",
               FMorabba.className,
             )}>
             ویکی سفارش
           </Link>
         </div>
-        <nav className="hidden items-center gap-x-5 sm:gap-x-10 lg:flex">
-          <NavLink
-            href={"/"}
-            className="font-medium [&.active]:text-primary-dark  dark:[&.active]:text-primary-dark">
-            صفحه اصلی
-          </NavLink>
-          <NavLink
-            href={"/experiences"}
-            className="font-medium [&.active]:text-primary-dark  dark:[&.active]:text-primary-dark">
-            تجربه ها
-          </NavLink>
-          <NavLink
-            href={"/stores"}
-            className="font-medium [&.active]:text-primary-dark dark:[&.active]:text-primary-dark">
-            فروشگاه ها
-          </NavLink>
-          <NavLink
-            href={"/experiences/new-experience"}
-            className="font-medium [&.active]:text-primary-dark  dark:[&.active]:text-primary-dark">
-            ثبت تجربه
-          </NavLink>
-          <NavLink
-            href={"/stores/new-store"}
-            className="font-medium [&.active]:text-primary-dark dark:[&.active]:text-primary-dark">
-            ثبت فروشگاه
-          </NavLink>
-          <ChangeThemeBtn />
+        <nav className="hidden items-center gap-x-9 text-gray-4 lg:flex">
+          <div className="flex items-center gap-x-9">
+            {links.map((link) => (
+              <NavLink
+                key={link.id}
+                href={link.href}
+                className="hover:text-black [&.active]:font-medium [&.active]:text-black">
+                {link.value}
+              </NavLink>
+            ))}
+          </div>
+          <div className="h-8 w-0.5 rounded-full bg-neutral-4"></div>
+          <div className="flex items-center gap-x-9">
+            <NavLink
+              href={"/stores/new-store"}
+              className="hover:text-black [&.active]:font-medium [&.active]:text-black">
+              ثبت فروشگاه
+            </NavLink>
+            <NavLink
+              href={"/experiences/new-experience"}
+              className="btn !h-11 min-h-0 rounded-md bg-gray-4 px-7 font-normal text-white">
+              ثبت تجربه
+            </NavLink>
+          </div>
         </nav>
         <div className="flex items-center gap-x-4 lg:hidden">
-          <ChangeThemeBtn />
           <MobileSidebarMenu />
         </div>
       </div>

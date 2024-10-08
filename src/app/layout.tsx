@@ -4,7 +4,6 @@ import { FIranSans } from "@/config/fonts";
 import { cn } from "@/lib/utils";
 import ApolloClientProvider from "@/providers/ApolloClientProvider";
 import type { Metadata } from "next";
-import { ThemeProvider } from "next-themes";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import Head from "next/head";
@@ -54,16 +53,14 @@ export default function RootLayout({
       </Head>
       <body
         className={cn(
-          "min-h-dvh overflow-y-auto bg-neutral-100 text-sm font-normal text-font-color dark:bg-neutral-950 dark:text-font-color-dark sm:text-base",
+          "text-gray-4 min-h-dvh overflow-y-auto bg-white text-sm font-normal sm:text-base",
           FIranSans.className,
         )}>
         <ApolloClientProvider>
-          <ThemeProvider attribute="class">
-            <Navbar />
-            {children}
-            <Toaster />
-            <Footer />
-          </ThemeProvider>
+          <Navbar />
+          {children}
+          <Toaster />
+          <Footer />
         </ApolloClientProvider>
       </body>
     </html>
