@@ -1,5 +1,3 @@
-import { FMorabba } from "@/config/fonts";
-import { cn } from "@/lib/utils";
 import dynamic from "next/dynamic";
 import SectionTitle from "../modules/SectionTitle";
 

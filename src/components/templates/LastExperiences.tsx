@@ -12,9 +12,9 @@ import { redirect } from "next/navigation";
 import SectionTitle from "../modules/SectionTitle";
 
 export default function LastExperiences() {
-  // const { loading, error, data } = useQuery(GET_LAST_EXPERIENCES);
+  const { loading, error, data } = useQuery(GET_LAST_EXPERIENCES);
 
-  // if (error) return redirect("/error");
+  if (error) return redirect("/error");
 
   return (
     <section className="container flex flex-col gap-y-7 pb-32 text-center sm:gap-y-10 lg:text-start">
@@ -26,7 +26,7 @@ export default function LastExperiences() {
           value: "دیدن همه تجربه ها",
         }}
       />
-      {/* <div className="w-full space-y-4">
+      <div className="w-full space-y-4">
         {loading
           ? new Array(4)
               .fill("")
@@ -36,11 +36,11 @@ export default function LastExperiences() {
             ))}
         <Link
           href={"/experiences"}
-          className="bg-primary text-font-color-dark btn btn-primary w-full gap-x-2 border-none font-medium sm:gap-x-4 sm:text-base">
+          className="btn w-full gap-x-2 border-none bg-gray-4 font-medium text-white hover:bg-black sm:gap-x-4 sm:text-base">
           <span>دیدن همه تجربه ها</span>
           <ArrowLeftIcon className="size-5 sm:size-6" />
         </Link>
-      </div> */}
+      </div>
     </section>
   );
 }

@@ -27,21 +27,21 @@ export default function ExperienceCard({ classNames, experience }: TProps) {
   return (
     <div
       className={cn(
-        "w-full overflow-hidden rounded-lg bg-neutral-200 text-start dark:bg-neutral-900",
+        "w-full overflow-hidden rounded-md border border-gray-3 bg-white text-start",
         classNames?.container,
       )}>
-      <div className="flex items-center justify-between border-b border-b-neutral-400 px-5 py-3 dark:border-b-neutral-700 sm:px-8 sm:py-4">
+      <div className="flex items-center justify-between border-b border-b-neutral-4 px-5 py-3 sm:px-8 sm:py-4">
         <div className="flex flex-col gap-x-4 gap-y-1 sm:flex-row sm:items-center">
           <Link
             href={`/stores/${experience.storeId}`}
-            className="flex items-center gap-x-3 text-primary dark:text-primary-dark">
-            <StoreIcon className="hidden size-8 shrink-0 sm:inline-block" />
+            className="text-primary flex items-center gap-x-3">
+            {/* <StoreIcon className="hidden size-8 shrink-0 sm:inline-block" /> */}
             <h3 className="-mb-0.5 line-clamp-1 text-xl font-bold xs:max-w-56 sm:max-w-56 sm:text-2xl md:max-w-72 lg:max-w-52 xl:max-w-96 2xl:max-w-[470px]">
               {experience.Store.name}
             </h3>
           </Link>
-          <div className="hidden h-6 w-0.5 bg-gray-500 dark:bg-gray-400 sm:inline-block"></div>
-          <p className="-mb-0.5 w-fit text-sm font-medium text-gray-500 dark:text-gray-400 sm:text-base">
+          <div className="hidden h-6 w-0.5 bg-gray-1 sm:inline-block"></div>
+          <p className="-mb-0.5 w-fit text-sm font-medium text-gray-1 sm:text-base">
             {timeAgo}
           </p>
         </div>
@@ -52,7 +52,7 @@ export default function ExperienceCard({ classNames, experience }: TProps) {
               .map((_, index) => (
                 <div
                   key={index}
-                  className="mask mask-star-2 size-5 bg-orange-400 sm:size-6"
+                  className="mask mask-star-2 size-5 bg-[#FFCC00] sm:size-6"
                 />
               ))}
             {new Array(5 - Math.round(experience.score || 0))
@@ -60,7 +60,7 @@ export default function ExperienceCard({ classNames, experience }: TProps) {
               .map((_, index) => (
                 <input
                   key={index}
-                  className="mask mask-star-2 size-5 bg-neutral-400 dark:bg-neutral-600 sm:size-6"
+                  className="mask mask-star-2 size-5 bg-neutral-3 sm:size-6"
                 />
               ))}
           </div>
@@ -68,22 +68,26 @@ export default function ExperienceCard({ classNames, experience }: TProps) {
       </div>
       <div className="px-5 py-5 sm:px-8 sm:py-6">
         <div className="relative">
-          <div className="absolute -right-8 bottom-0 top-0 h-full w-6 rounded-l-sm bg-primary sm:w-5"></div>
+          <div className="bg-primary absolute -right-8 bottom-0 top-0 h-full w-6 rounded-l-sm sm:w-5"></div>
           <Link href={`experiences/${experience.id}`}>
             <h2 className="line-clamp-1 text-xl font-bold sm:text-2xl">
               {experience.title}
             </h2>
           </Link>
         </div>
-        <Link href={`experiences/${experience.id}`}>
-          <p
-            className={cn(
-              "mt-3 line-clamp-6 text-gray-700 dark:text-gray-300",
-              classNames?.body,
-            )}>
-            {experience.body}
-          </p>
-        </Link>
+        <p
+          className={cn(
+            "mt-2 line-clamp-6 text-sm text-gray-2 xs:mt-3 xs:text-base",
+            classNames?.body,
+          )}>
+          {experience.body}
+          <Link
+            className="inline font-medium text-primary-default hover:underline"
+            href={`experiences/${experience.id}`}>
+            {" "}
+            دیدن ادامه...
+          </Link>
+        </p>
       </div>
     </div>
   );

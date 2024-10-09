@@ -17,13 +17,15 @@ import { NextRequest } from "next/server";
 import path from "path";
 import resolvers from "./resolvers";
 
-const typeDefs = fs.readFileSync(
-  path.join(path.resolve(), "./src/app/api/graphql/schema.graphql"),
-  "utf-8",
-);
+let typeDefs = "";
 
 let plugins = [];
 if (process.env.NODE_ENV === "production") {
+  typeDefs = fs.readFileSync(
+    path.join(path.resolve(), "./src/app/api/graphql/schema.graphql"),
+    "utf-8",
+  );
+
   plugins = [
     ApolloServerPluginLandingPageProductionDefault({
       embed: true,
@@ -31,6 +33,8 @@ if (process.env.NODE_ENV === "production") {
     }),
   ];
 } else {
+  typeDefs = fs.readFileSync("./src/app/api/graphql/schema.graphql", "utf8");
+
   plugins = [ApolloServerPluginLandingPageLocalDefault({ embed: true })];
 }
 

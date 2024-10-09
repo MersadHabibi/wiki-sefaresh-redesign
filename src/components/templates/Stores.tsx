@@ -2,11 +2,10 @@
 
 import GET_POPULAR_STORES from "@/graphql/client/queries/GetPopularStores";
 import { useQuery } from "@apollo/client";
-import { ArrowLeftIcon } from "lucide-react";
+import * as motion from "framer-motion/client";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { useMediaQuery } from "usehooks-ts";
-import * as motion from "framer-motion/client";
 
 export default function Stores() {
   const isXLDevice = useMediaQuery("(min-width : 1280px)");
@@ -28,7 +27,7 @@ export default function Stores() {
             .map((_, index) => (
               <div
                 key={index}
-                className="light-skeleton h-9 w-20 !rounded-md bg-neutral-200 sm:h-10 sm:w-28"></div>
+                className="light-skeleton h-9 w-20 !rounded-md bg-neutral-1 sm:h-10 sm:w-28"></div>
             ))
         : data?.popularStores
             .slice(0, isXLDevice ? undefined : 20)
