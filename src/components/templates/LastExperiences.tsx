@@ -9,25 +9,24 @@ import Link from "next/link";
 import ExperienceCard from "../modules/ExperienceCard";
 import ExperienceCardSkeleton from "../modules/ExperienceCardSkeleton";
 import { redirect } from "next/navigation";
+import SectionTitle from "../modules/SectionTitle";
 
 export default function LastExperiences() {
-  const { loading, error, data } = useQuery(GET_LAST_EXPERIENCES);
+  // const { loading, error, data } = useQuery(GET_LAST_EXPERIENCES);
 
-  if (error) return redirect("/error");
+  // if (error) return redirect("/error");
 
   return (
-    <section className="container flex flex-col gap-y-7 pb-32 text-center sm:gap-y-10 lg:flex-row lg:text-start">
-      <div className="top-24 h-fit shrink-0 lg:sticky lg:w-96 lg:pt-5 xl:w-[420px]">
-        <h2
-          className={cn(
-            "mb-3 text-2xl font-semibold sm:mb-4 sm:text-4xl",
-            FMorabba.className,
-          )}>
-          آخرین تجربه ها
-        </h2>
-        <div className="mx-auto h-1 w-40 rounded-full bg-primary dark:bg-primary-dark lg:mx-0"></div>
-      </div>
-      <div className="w-full space-y-4">
+    <section className="container flex flex-col gap-y-7 pb-32 text-center sm:gap-y-10 lg:text-start">
+      <SectionTitle
+        title="آخرین تجربه ها"
+        caption="آخرین تجربه های سفارش ثبت شده."
+        btn={{
+          href: "/experiences",
+          value: "دیدن همه تجربه ها",
+        }}
+      />
+      {/* <div className="w-full space-y-4">
         {loading
           ? new Array(4)
               .fill("")
@@ -37,11 +36,11 @@ export default function LastExperiences() {
             ))}
         <Link
           href={"/experiences"}
-          className="btn btn-primary w-full gap-x-2 border-none bg-primary font-medium text-font-color-dark sm:gap-x-4 sm:text-base">
+          className="bg-primary text-font-color-dark btn btn-primary w-full gap-x-2 border-none font-medium sm:gap-x-4 sm:text-base">
           <span>دیدن همه تجربه ها</span>
           <ArrowLeftIcon className="size-5 sm:size-6" />
         </Link>
-      </div>
+      </div> */}
     </section>
   );
 }

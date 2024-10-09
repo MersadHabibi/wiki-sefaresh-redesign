@@ -53,7 +53,7 @@ export default function RootLayout({
       </Head>
       <body
         className={cn(
-          "min-h-dvh overflow-y-auto overflow-x-hidden bg-white pt-16 text-sm font-normal text-gray-4 sm:pt-20 sm:text-base",
+          "min-h-dvh overflow-y-auto overflow-x-hidden bg-white pt-16 text-base font-normal text-gray-4 sm:pt-20 sm:text-base",
           FIranSans.className,
         )}>
         <ApolloClientProvider>

@@ -13,7 +13,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative mb-28 h-[calc(100dvh-64px)] pb-10 pt-5 text-center sm:h-[calc(100dvh-80px)] lg:max-h-[900px] lg:py-5 lg:pb-14">
+    <section className="relative mb-28 h-[calc(100dvh-64px)] pb-10 pt-5 text-center sm:mb-36 sm:h-[calc(100dvh-80px)] lg:max-h-[900px] lg:py-5 lg:pb-14">
       <div className=" absolute bottom-0 left-0 right-0 flex h-0.5 w-full items-center justify-between gap-x-8 sm:gap-x-10 md:gap-x-14">
         <motion.div
           initial={{ width: "0px" }}
