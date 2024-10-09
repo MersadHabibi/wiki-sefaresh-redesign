@@ -1,16 +1,15 @@
 import { FMorabba } from "@/config/fonts";
 import { cn } from "@/lib/utils";
+import * as motion from "framer-motion/client";
 import {
   ChevronDownIcon,
   CircleAlertIcon,
-  CirclePlusIcon,
   EyeIcon,
   PlusIcon,
   SearchIcon,
 } from "lucide-react";
-import Image from "next/image";
+import Search from "./Search";
 import Link from "next/link";
-import * as motion from "framer-motion/client";
 
 export default function Hero() {
   return (
@@ -131,38 +130,20 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
           className="mt-5 w-full max-w-md space-y-3 xs:mt-7 sm:space-y-5 md:max-w-xl">
-          <div className="flex w-full rounded-lg border border-gray-2 bg-white p-1">
-            <input
-              className="w-full border-none bg-transparent pr-5 text-sm text-gray-1 outline-none"
-              placeholder="جستجو..."
-              type="text"
-            />
-            <div className="flex shrink-0 items-center gap-x-3">
-              <select className="border-none !bg-transparent outline-none ">
-                <option value="" defaultChecked disabled>
-                  جستجو در
-                </option>
-                <option value="stores" defaultChecked>
-                  فروشگاه ها
-                </option>
-                <option value="experiences" defaultChecked>
-                  تجربه ها
-                </option>
-              </select>
-              <button className="flex size-10 items-center justify-center rounded-md bg-primary-default text-white hover:bg-primary-4 sm:size-11">
-                <SearchIcon className="size-6" />
-              </button>
-            </div>
-          </div>
+          <Search />
           <div className="flex gap-x-3 sm:gap-x-5">
-            <button className="btn btn-primary w-full shrink gap-x-1.5 rounded-lg bg-primary-default !px-0 py-2.5 text-sm font-medium text-white hover:bg-primary-4 xs:gap-x-2 xs:text-base md:text-lg">
+            <Link
+              href={"/experiences/new-experience"}
+              className="btn btn-primary w-full shrink gap-x-1.5 rounded-lg bg-primary-default !px-0 py-2.5 text-sm font-medium text-white hover:bg-primary-4 xs:gap-x-2 xs:text-base md:text-lg">
               <span>ثبت تجربه جدید</span>
               <PlusIcon className="size-5 md:size-6" />
-            </button>
-            <button className="btn w-full shrink gap-x-1.5 rounded-lg border !border-gray-2 bg-white !px-0 py-2.5 text-sm font-medium text-gray-3 hover:bg-gray-2 hover:text-white xs:gap-x-2 xs:text-base md:text-lg">
+            </Link>
+            <Link
+              href={"/experiences"}
+              className="btn w-full shrink gap-x-1.5 rounded-lg border !border-gray-2 bg-white !px-0 py-2.5 text-sm font-medium text-gray-3 hover:bg-gray-2 hover:text-white xs:gap-x-2 xs:text-base md:text-lg">
               <span>دیدن تجربه ها</span>
               <EyeIcon className="size-5 md:size-6" />
-            </button>
+            </Link>
           </div>
         </motion.div>
       </div>
