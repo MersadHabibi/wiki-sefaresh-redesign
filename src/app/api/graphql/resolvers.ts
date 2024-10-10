@@ -141,6 +141,23 @@ const resolvers = {
       }
     },
 
+    lastStores: async (_: any, __: any, ctx: TGraphQLContext) => {
+      try {
+        const stores = await ctx.prisma?.store.findMany({
+          orderBy: {
+            createdAt: "desc",
+          },
+          take: 4,
+        });
+
+        return stores;
+      } catch (error) {
+        throw new GraphQLError("سرور با مشکل مواجه شد! لطفا بعدا امتحان کنید", {
+          extensions: { code: 500 },
+        });
+      }
+    },
+
     experiences: async (
       _: any,
       args: {

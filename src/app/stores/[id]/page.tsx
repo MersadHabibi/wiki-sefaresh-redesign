@@ -16,7 +16,7 @@ export async function generateMetadata({
   } = await graphQLFetch(
     process.env.NEXT_PUBLIC_BACKEND_URL || "",
     /* GraphQL */ `
-      query StoreById($storeId: ID!) {
+      query StoreByIdForMeta($storeId: ID!) {
         store(id: $storeId) {
           name
           activityField

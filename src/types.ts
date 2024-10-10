@@ -10,9 +10,9 @@ export type TGraphQLContext = {
 export type TStore = {
   id: string;
   name: string;
-  website: string;
-  instagram: string;
-  telegram: string;
+  website?: string | null;
+  instagram?: string | null;
+  telegram?: string | null;
   activityField: string;
   experiencesCount: number;
   view: number;

@@ -1,15 +1,14 @@
 "use client";
 
-import { FMorabba } from "@/config/fonts";
 import GET_LAST_EXPERIENCES from "@/graphql/client/queries/GetLastExperiences";
-import { cn } from "@/lib/utils";
 import { useQuery } from "@apollo/client";
 import { ArrowLeftIcon } from "lucide-react";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import ExperienceCard from "../modules/ExperienceCard";
 import ExperienceCardSkeleton from "../modules/ExperienceCardSkeleton";
-import { redirect } from "next/navigation";
 import SectionTitle from "../modules/SectionTitle";
+import * as motion from "framer-motion/client";
 
 export default function LastExperiences() {
   const { loading, error, data } = useQuery(GET_LAST_EXPERIENCES);
@@ -26,7 +25,12 @@ export default function LastExperiences() {
           value: "دیدن همه تجربه ها",
         }}
       />
-      <div className="w-full space-y-4">
+      <motion.div
+        initial={{ scale: 0.5, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="w-full space-y-4">
         {loading
           ? new Array(4)
               .fill("")
@@ -40,7 +44,7 @@ export default function LastExperiences() {
           <span>دیدن همه تجربه ها</span>
           <ArrowLeftIcon className="size-5 sm:size-6" />
         </Link>
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -86,6 +86,7 @@ type Query {
   ): PaginationStores!
   store(id: ID!): Store!
   popularStores: [Store]!
+  lastStores: [Store]!
   experiences(
     page: Int
     pageSize: Int

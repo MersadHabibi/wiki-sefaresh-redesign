@@ -16,7 +16,7 @@ export async function generateMetadata({
   } = await graphQLFetch(
     process.env.NEXT_PUBLIC_BACKEND_URL || "",
     /* GraphQL */ `
-      query ExperienceById($experienceId: ID!) {
+      query ExperienceByIdForMeta($experienceId: ID!) {
         experience(id: $experienceId) {
           title
           body

@@ -67,10 +67,10 @@ export default function ExperienceCard({ classNames, experience }: TProps) {
         </div>
       </div>
       <div className="px-5 py-5 sm:px-8 sm:py-6">
-        <div className="relative">
-          <div className="bg-primary absolute -right-8 bottom-0 top-0 h-full w-6 rounded-l-sm sm:w-5"></div>
+        <div className="relative z-[1] w-fit">
+          <div className="absolute -left-0.5 -right-0.5 bottom-0 -z-[1] h-1/2 rounded-sm bg-primary-1/70"></div>
           <Link href={`experiences/${experience.id}`}>
-            <h2 className="line-clamp-1 text-xl font-bold sm:text-2xl">
+            <h2 className="line-clamp-1 text-xl/5 font-bold sm:text-2xl/6">
               {experience.title}
             </h2>
           </Link>

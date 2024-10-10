@@ -20,8 +20,6 @@ export default function ExperienceCardSkeleton() {
         <div className="mt-5 line-clamp-6 text-gray-700">
           <div className="light-skeleton mb-3 h-5 w-full !rounded-md bg-neutral-2"></div>
           <div className="light-skeleton mb-3 h-5 w-full !rounded-md bg-neutral-2"></div>
-          <div className="light-skeleton mb-3 h-5 w-full !rounded-md bg-neutral-2"></div>
-          <div className="light-skeleton mb-3 h-5 w-[80%] !rounded-md bg-neutral-2"></div>
         </div>
       </div>
     </div>
