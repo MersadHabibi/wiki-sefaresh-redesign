@@ -25,10 +25,10 @@ export default function SearchStores() {
   }, [URLSearchValue]);
 
   return (
-    <label className="input flex h-16 !w-full items-center gap-2 !border-none bg-neutral-200 px-6 !outline-none dark:bg-neutral-900">
+    <label className="input flex h-16 !w-full items-center gap-2 rounded-md !border !border-neutral-4 bg-white p-2 !outline-none">
       <input
         type="text"
-        className="grow !border-none !outline-none"
+        className="grow !border-none pr-4 !outline-none"
         placeholder="جستجو..."
         value={searchValue}
         onInput={(event) => setSearchValue(event.currentTarget.value)}
@@ -38,8 +38,10 @@ export default function SearchStores() {
           }
         }}
       />
-      <button onClick={searchHandler} className="py-1 pr-1">
-        <SearchIcon className="size-7" />
+      <button
+        onClick={searchHandler}
+        className="flex h-full w-12 items-center justify-center rounded-md bg-primary-default py-1 pr-1 text-white">
+        <SearchIcon className="size-7 pl-0.5" />
       </button>
     </label>
   );

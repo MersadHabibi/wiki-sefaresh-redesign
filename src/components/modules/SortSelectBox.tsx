@@ -53,7 +53,7 @@ export default function SortSelectBox({ options }: { options: TOption[] }) {
     <div className="relative pt-5 md:hidden 2xl:pt-7">
       <div
         className={cn(
-          "flex h-16 cursor-pointer items-center justify-between rounded-lg border border-gray-3 bg-white px-6 font-medium xl:w-96",
+          "flex h-16 cursor-pointer items-center justify-between rounded-lg border border-neutral-4 bg-white px-6 font-medium xl:w-96",
           isOpen && "bg-neutral-1",
         )}
         onClick={() => setIsOpen(!isOpen)}>

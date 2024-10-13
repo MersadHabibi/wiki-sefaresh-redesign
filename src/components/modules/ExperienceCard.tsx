@@ -27,7 +27,7 @@ export default function ExperienceCard({ classNames, experience }: TProps) {
   return (
     <div
       className={cn(
-        "w-full overflow-hidden rounded-md border border-gray-3 bg-white text-start",
+        "w-full overflow-hidden rounded-md border border-neutral-4 bg-white text-start",
         classNames?.container,
       )}>
       <div className="flex items-center justify-between border-b border-b-neutral-4 px-5 py-3 sm:px-8 sm:py-4">

@@ -35,7 +35,7 @@ export default function Stores() {
               <Link
                 href={`/stores/${store?.id}`}
                 key={store?.id}
-                className="flex h-9 items-center justify-center rounded-md border border-gray-3 bg-white px-4 py-1 text-base font-medium text-gray-3 transition-all hover:bg-gray-3 hover:text-white sm:h-10 sm:px-5 sm:py-1.5 sm:text-lg 2xl:px-6">
+                className="flex h-9 items-center justify-center rounded-md border border-neutral-4 bg-white px-4 py-1 text-base font-medium text-gray-3 transition-all hover:bg-gray-3 hover:text-white sm:h-10 sm:px-5 sm:py-1.5 sm:text-lg 2xl:px-6">
                 {store?.name}
               </Link>
             ))}

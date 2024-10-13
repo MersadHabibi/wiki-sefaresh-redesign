@@ -79,7 +79,7 @@ export default function StoreSelectBox() {
     <div ref={selectBox} className="relative pt-5 2xl:pt-7">
       <div
         className={cn(
-          "flex h-16 cursor-pointer items-center justify-between rounded-md border border-gray-3 bg-white px-6 font-medium xl:w-96",
+          "flex h-16 cursor-pointer items-center justify-between rounded-md border border-neutral-4 bg-white px-6 font-medium xl:w-96",
           isOpen && "bg-neutral-1",
         )}
         onClick={() => setIsOpen(!isOpen)}>
@@ -122,7 +122,7 @@ export default function StoreSelectBox() {
               isOpen && "visible opacity-100",
             )}
             onClick={() => setIsOpen(false)}></div>
-          <div className="fixed bottom-0 left-0 right-0 z-[60] mt-2 w-full overflow-hidden rounded-t-lg border border-gray-3 bg-white font-medium shadow-lg shadow-black/10 md:absolute md:bottom-auto md:top-full md:rounded-lg">
+          <div className="fixed bottom-0 left-0 right-0 z-[60] mt-2 w-full overflow-hidden rounded-t-lg border border-neutral-4 bg-white font-medium shadow-lg shadow-black/10 md:absolute md:bottom-auto md:top-full md:rounded-lg">
             <input
               className="h-14 w-full !border-b border-neutral-400 bg-transparent px-4 outline-none md:h-12"
               type="text"

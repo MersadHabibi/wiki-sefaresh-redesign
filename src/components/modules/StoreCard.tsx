@@ -6,7 +6,7 @@ export default function StoreCard(
   store: Partial<Omit<TStore, "view" | "instagram" | "telegram">>,
 ) {
   return (
-    <div className="rounded-md border border-gray-3 bg-white p-4">
+    <div className="rounded-md border border-neutral-4 bg-white p-4">
       <div className="flex items-center justify-center pb-5 pt-1">
         <Link
           href={`/stores/${store?.id}`}
@@ -15,7 +15,7 @@ export default function StoreCard(
           <h2 className="line-clamp-1 w-fit">{store?.name}</h2>
         </Link>
       </div>
-      <div className="mt-auto w-full rounded-md border border-gray-3 px-4 py-4 text-base font-medium text-gray-2">
+      <div className="mt-auto w-full rounded-md border border-neutral-4 px-4 py-4 text-base font-medium text-gray-2">
         <div className="flex w-full items-center justify-center px-2 font-medium">
           <p className="line-clamp-2 text-center">{store?.activityField}</p>
         </div>

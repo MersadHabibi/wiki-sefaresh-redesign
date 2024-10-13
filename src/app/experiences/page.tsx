@@ -5,6 +5,7 @@ import SortExperiences, { sorts } from "./_components/SortExperiences";
 import StoreSelectBox from "./_components/StoreSelectBox";
 import { Suspense } from "react";
 import { Metadata } from "next";
+import * as motion from "framer-motion/client";
 
 export const metadata: Metadata = {
   title: "تجربه ها",
@@ -15,7 +16,12 @@ export const metadata: Metadata = {
 export default function ExperiencePage() {
   return (
     <main className="h-fit pb-20 pt-10">
-      <section className="container flex flex-col gap-5 lg:flex-row 2xl:gap-x-7">
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="container flex flex-col gap-5 lg:flex-row 2xl:gap-x-7">
         <Suspense>
           <div className="top-28 h-fit shrink-0 lg:sticky">
             <SearchExperiences />
@@ -28,7 +34,7 @@ export default function ExperiencePage() {
             <ExperiencesList />
           </div>
         </Suspense>
-      </section>
+      </motion.section>
     </main>
   );
 }
