@@ -66,28 +66,52 @@ export default function Hero() {
         <div className="h-full w-[1.6px] bg-primary-default/20"></div>
       </motion.div>
       <div className="container relative flex size-full flex-col items-center justify-center pb-10">
-        <motion.div className="absolute right-10 top-20 hidden lg:block xl:right-24 xl:top-32">
+        <motion.div
+          animate={{
+            scale: [0.8, 1.1, 0.8],
+            opacity: [0.6, 1.1, 0.6],
+          }}
+          transition={{ repeat: Infinity, duration: 2 }}
+          className="absolute right-10 top-20 hidden lg:block xl:right-24 xl:top-32">
           <div className="relative size-20 blur-[1.25px]">
             <div className="absolute inset-0 m-auto size-[70px] rounded-full border border-primary-default/50"></div>
             <div className="absolute inset-0 m-auto size-[45px] rounded-full border border-primary-default/75"></div>
             <div className="absolute inset-0 m-auto size-[20px] rounded-full border border-primary-default"></div>
           </div>
         </motion.div>
-        <motion.div className="absolute left-10 top-10 hidden lg:block xl:left-24">
+        <motion.div
+          animate={{
+            scale: [1.1, 0.8, 1.1],
+            opacity: [0.6, 1.1, 0.6],
+          }}
+          transition={{ repeat: Infinity, duration: 4 }}
+          className="absolute left-10 top-10 hidden lg:block xl:left-24">
           <div className="relative size-20 blur-[1.75px]">
             <div className="absolute inset-0 m-auto size-[70px] rounded-full border border-primary-default/50"></div>
             <div className="absolute inset-0 m-auto size-[45px] rounded-full border border-primary-default/75"></div>
             <div className="absolute inset-0 m-auto size-[20px] rounded-full border border-primary-default"></div>
           </div>
         </motion.div>
-        <motion.div className="absolute bottom-20 right-24 hidden lg:block xl:right-44">
+        <motion.div
+          animate={{
+            scale: [1.1, 0.8, 1.1],
+            opacity: [0.6, 1.1, 0.6],
+          }}
+          transition={{ repeat: Infinity, duration: 4 }}
+          className="absolute bottom-20 right-24 hidden lg:block xl:right-44">
           <div className="relative size-20 blur-[2px]">
             <div className="absolute inset-0 m-auto size-[70px] rounded-full border border-primary-default/50"></div>
             <div className="absolute inset-0 m-auto size-[45px] rounded-full border border-primary-default/75"></div>
             <div className="absolute inset-0 m-auto size-[20px] rounded-full border border-primary-default"></div>
           </div>
         </motion.div>
-        <motion.div className="absolute bottom-36 left-24 hidden lg:block xl:left-48">
+        <motion.div
+          animate={{
+            scale: [0.8, 1.1, 0.8],
+            opacity: [0.6, 1.1, 0.6],
+          }}
+          transition={{ repeat: Infinity, duration: 2 }}
+          className="absolute bottom-36 left-24 hidden lg:block xl:left-48">
           <div className="relative size-20 blur-[1.5px]">
             <div className="absolute inset-0 m-auto size-[70px] rounded-full border border-primary-default/50"></div>
             <div className="absolute inset-0 m-auto size-[45px] rounded-full border border-primary-default/75"></div>
