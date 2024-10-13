@@ -33,14 +33,14 @@ export default function SortExperiences() {
   };
 
   return (
-    <div className="hidden h-16 w-full items-center rounded-lg bg-neutral-200 px-6 dark:bg-neutral-900 md:flex">
+    <div className="hidden h-16 w-full items-center rounded-md border border-gray-3 bg-white px-6 md:flex">
       <p className="font-bold">مرتب کردن بر اساس:</p>
       <div className="flex h-full gap-x-4 pr-7 lg:gap-x-3 lg:pr-4 xl:gap-x-4 xl:pr-7">
         {sorts.map((sort) => (
           <button
             key={sort.value}
             className={cn(
-              "h-full border-primary px-2 opacity-70 hover:opacity-80 [&.active]:border-y-2 [&.active]:font-medium [&.active]:opacity-100",
+              "h-full border-primary-default px-2 opacity-70 hover:opacity-80 [&.active]:border-y-2 [&.active]:font-medium [&.active]:opacity-100",
               searchParams.get("sortBy") == sort.value && "active",
               !searchParams.get("sortBy") &&
                 sort.value === EXPERIENCES_SORTS.MOST_RELEVANT &&

@@ -34,7 +34,7 @@ export default function ExperiencesList() {
     <>
       {data?.experiences.data.length || loading ? null : (
         <div>
-          <p className="w-full pt-12 text-center text-2xl font-semibold ">
+          <p className="w-full pb-36 pt-14 text-center text-2xl font-semibold ">
             تجربه ای پیدا نشد.
           </p>
         </div>

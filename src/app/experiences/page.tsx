@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function ExperiencePage() {
   return (
-    <main className="h-fit bg-neutral-100 pb-20 pt-10 dark:bg-neutral-950">
+    <main className="h-fit pb-20 pt-10">
       <section className="container flex flex-col gap-5 lg:flex-row 2xl:gap-x-7">
         <Suspense>
           <div className="top-28 h-fit shrink-0 lg:sticky">

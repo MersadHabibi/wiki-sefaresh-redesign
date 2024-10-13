@@ -53,8 +53,8 @@ export default function SortSelectBox({ options }: { options: TOption[] }) {
     <div className="relative pt-5 md:hidden 2xl:pt-7">
       <div
         className={cn(
-          "flex h-16 cursor-pointer items-center justify-between rounded-lg bg-neutral-200 px-6 font-medium dark:bg-neutral-900 xl:w-96",
-          isOpen && "bg-neutral-300 dark:bg-neutral-800",
+          "flex h-16 cursor-pointer items-center justify-between rounded-lg border border-gray-3 bg-white px-6 font-medium xl:w-96",
+          isOpen && "bg-neutral-1",
         )}
         onClick={() => setIsOpen(!isOpen)}>
         {selectedOption?.title || "مرتب کردن بر اساس"}
@@ -66,15 +66,15 @@ export default function SortSelectBox({ options }: { options: TOption[] }) {
         <>
           <div
             className={cn(
-              "fixed inset-0 z-[60] size-full w-full bg-black/30 opacity-0 backdrop-blur-sm transition-all dark:bg-white/5 md:hidden",
+              "fixed inset-0 z-[60] size-full w-full bg-black/30 opacity-0 backdrop-blur-sm transition-all md:hidden",
               isOpen && "visible opacity-100",
             )}
             onClick={() => setIsOpen(false)}></div>
-          <div className="fixed bottom-0 left-0 right-0 z-[60] mt-2 w-full overflow-hidden rounded-t-lg bg-neutral-300 font-medium shadow-md shadow-black/10 dark:bg-neutral-800">
+          <div className="fixed bottom-0 left-0 right-0 z-[60] mt-2 w-full overflow-hidden rounded-t-lg bg-white font-medium shadow-md shadow-black/10">
             <div className="flex h-fit flex-col items-start justify-start overflow-y-auto md:max-h-40">
               {options.map((option) => (
                 <button
-                  className="block w-full px-4 py-4 text-start transition-colors hover:bg-neutral-400/50 dark:hover:bg-neutral-700"
+                  className="block w-full px-4 py-4 text-start transition-colors hover:bg-neutral-2"
                   key={option.value}
                   onClick={() => sortHandler(option.value)}>
                   {option.title}

@@ -5,7 +5,7 @@ import GET_STORES_NAME_AND_ID from "@/graphql/client/queries/GetStoresNameAndId"
 import useSearchQueries from "@/hooks/useSearchQueries";
 import { cn } from "@/lib/utils";
 import { useLazyQuery, useQuery } from "@apollo/client";
-import { ChevronDownIcon } from "lucide-react";
+import { ChevronDownIcon, XIcon } from "lucide-react";
 import { redirect, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { useMediaQuery, useOnClickOutside } from "usehooks-ts";
@@ -79,33 +79,52 @@ export default function StoreSelectBox() {
     <div ref={selectBox} className="relative pt-5 2xl:pt-7">
       <div
         className={cn(
-          "flex h-16 cursor-pointer items-center justify-between rounded-lg bg-neutral-200 px-6 font-medium dark:bg-neutral-900 xl:w-96",
-          isOpen && "bg-neutral-300 dark:bg-neutral-800",
+          "flex h-16 cursor-pointer items-center justify-between rounded-md border border-gray-3 bg-white px-6 font-medium xl:w-96",
+          isOpen && "bg-neutral-1",
         )}
         onClick={() => setIsOpen(!isOpen)}>
         {getStoreLoading ? (
           <div className="flex w-full items-center justify-center py-4">
-            <span className="loading loading-spinner loading-sm text-black dark:text-white"></span>
+            <span className="loading loading-spinner loading-sm text-black"></span>
           </div>
         ) : (
           selectedOption.name
         )}
 
-        <ChevronDownIcon
-          className={cn("transition-all", isOpen && "rotate-180")}
-        />
+        {selectedOption.id ? (
+          <button
+            onClick={(event) => {
+              event.preventDefault();
+
+              setSelectedOption({
+                id: "",
+                name: "انتخاب فروشگاه",
+              });
+
+              selectStoreHandler({
+                id: "",
+                name: "انتخاب فروشگاه",
+              });
+            }}>
+            <XIcon className="" />
+          </button>
+        ) : (
+          <ChevronDownIcon
+            className={cn("transition-all", isOpen && "rotate-180")}
+          />
+        )}
       </div>
       {isOpen && (
         <>
           <div
             className={cn(
-              "fixed inset-0 z-[60] size-full w-full bg-black/30 opacity-0 backdrop-blur-sm transition-all dark:bg-white/5 md:hidden",
+              "fixed inset-0 z-[60] size-full w-full bg-black/30 opacity-0 backdrop-blur-sm transition-all md:hidden",
               isOpen && "visible opacity-100",
             )}
             onClick={() => setIsOpen(false)}></div>
-          <div className="fixed bottom-0 left-0 right-0 z-[60] mt-2 w-full overflow-hidden rounded-lg bg-neutral-300 font-medium shadow-md shadow-black/10 dark:bg-neutral-800 md:absolute md:bottom-auto md:top-full">
+          <div className="fixed bottom-0 left-0 right-0 z-[60] mt-2 w-full overflow-hidden rounded-t-lg border border-gray-3 bg-white font-medium shadow-lg shadow-black/10 md:absolute md:bottom-auto md:top-full md:rounded-lg">
             <input
-              className="h-14 w-full !border-b border-neutral-400 bg-transparent px-4 outline-none dark:border-neutral-700 md:h-12"
+              className="h-14 w-full !border-b border-neutral-400 bg-transparent px-4 outline-none md:h-12"
               type="text"
               placeholder="جستجو..."
               value={searchTerm}
@@ -114,12 +133,12 @@ export default function StoreSelectBox() {
             <div className="flex h-64 flex-col items-start justify-start overflow-y-auto md:max-h-40">
               {loading ? (
                 <div className="flex w-full items-center justify-center py-4">
-                  <span className="loading loading-spinner loading-sm text-black dark:text-white"></span>
+                  <span className="loading loading-spinner loading-sm text-black"></span>
                 </div>
               ) : null}
               {data?.stores.data.map((store) => (
                 <button
-                  className="block w-full px-4 py-3 text-start hover:bg-neutral-400/50 dark:hover:bg-neutral-700"
+                  className="block w-full px-4 py-3 text-start hover:bg-neutral-400/50"
                   key={store?.id}
                   onClick={() => store && selectStoreHandler(store)}>
                   {store?.name}
