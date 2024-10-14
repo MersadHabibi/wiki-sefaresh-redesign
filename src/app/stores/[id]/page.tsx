@@ -43,7 +43,7 @@ export default function StorePage({
   };
 }) {
   return (
-    <main className="relative z-10 h-fit bg-neutral-100 pb-20 pt-10 dark:bg-neutral-950 lg:pb-20 lg:pt-10">
+    <main className="relative z-10 h-fit pb-20 pt-10 dark:bg-neutral-950 lg:pb-20 lg:pt-10">
       <div className="container">
         <StoreSection storeId={params.id} />
         <StoreExperiences storeId={params.id} />

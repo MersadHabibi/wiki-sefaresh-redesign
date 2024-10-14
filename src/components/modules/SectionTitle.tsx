@@ -37,7 +37,7 @@ export default function SectionTitle(props: TProps) {
         </p>
       </motion.div>
       <motion.div
-        className="hidden !w-full !max-w-56 lg:block"
+        className="mb-1 hidden !w-full !max-w-56 lg:block"
         initial={{ marginLeft: "-200px", opacity: 0 }}
         whileInView={{ marginLeft: "0", opacity: 1 }}
         transition={{ duration: 0.5 }}

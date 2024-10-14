@@ -62,9 +62,9 @@ export default function Experience({ params }: { params: { id: string } }) {
                 <Link
                   href={`/stores/${data?.experience.storeId}`}
                   className="flex items-center gap-x-3 text-gray-4">
-                  <h3 className="-mb-0.5 line-clamp-1 text-xl font-bold xs:max-w-56 sm:max-w-56 sm:text-2xl md:max-w-72 lg:max-w-52 xl:max-w-96 2xl:max-w-[470px]">
+                  <h2 className="-mb-0.5 line-clamp-1 text-xl font-bold xs:max-w-56 sm:max-w-56 sm:text-2xl md:max-w-72 lg:max-w-52 xl:max-w-96 2xl:max-w-[470px]">
                     {data?.experience.Store.name}
-                  </h3>
+                  </h2>
                 </Link>
                 <div className="hidden h-6 w-0.5 bg-gray-1 sm:inline-block"></div>
                 <p className="-mb-0.5 w-fit text-sm font-normal text-gray-1 sm:text-base">
@@ -86,7 +86,7 @@ export default function Experience({ params }: { params: { id: string } }) {
                     .map((_, index) => (
                       <input
                         key={index}
-                        className="mask mask-star-2 size-5 bg-neutral-400 sm:size-6"
+                        className="mask mask-star-2 size-5 bg-neutral-3 sm:size-6"
                       />
                     ))}
                 </div>
@@ -94,11 +94,11 @@ export default function Experience({ params }: { params: { id: string } }) {
             </div>
             <div className="px-5 !pb-0 pt-5 sm:px-8 sm:pt-6">
               <Link href={`/experiences/${data?.experience.id}`}>
-                <h2 className="relative z-[1] line-clamp-1 w-fit px-0.5 text-xl/5 font-bold sm:text-2xl/6">
-                  <div className="absolute -left-0 -right-0 bottom-0 -z-[1] h-1/2 !rounded-sm bg-primary-1"></div>
+                <h1 className="relative z-[1] line-clamp-1 w-fit px-0.5 text-xl/5 font-bold sm:text-2xl/6">
+                  <div className="absolute -left-0 -right-0 bottom-0 -z-[1] h-1/2 !rounded-sm bg-primary-1/70"></div>
 
                   {data?.experience.title}
-                </h2>
+                </h1>
               </Link>
               <p className="mt-3 line-clamp-6 text-gray-2">
                 {data?.experience.body}
