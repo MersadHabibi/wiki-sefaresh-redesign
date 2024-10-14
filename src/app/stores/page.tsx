@@ -1,10 +1,11 @@
 import SortSelectBox from "@/components/modules/SortSelectBox";
-import SearchStores from "./_components/SearchStores";
-import StoresList from "./_components/StoresList";
-import SortStores, { sorts } from "./_components/SortStores";
-import { Suspense } from "react";
-import { Metadata } from "next";
+import BackgroundShapes from "@/components/templates/BackgroundShapes";
 import * as motion from "framer-motion/client";
+import { Metadata } from "next";
+import { Suspense } from "react";
+import SearchStores from "./_components/SearchStores";
+import SortStores, { sorts } from "./_components/SortStores";
+import StoresList from "./_components/StoresList";
 
 export const metadata: Metadata = {
   title: "فروشگاه ها",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function StoresPage() {
   return (
-    <main className="h-fit pb-20 pt-10">
+    <main className="relative z-10 h-fit overflow-x-hidden pb-20 pt-10">
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -22,8 +23,7 @@ export default function StoresPage() {
         viewport={{ once: true }}
         className="container">
         <Suspense>
-          <div
-            className="grid grid-cols-1 md:gap-5 lg:grid-cols-3 xl:grid-cols-4 2xl:gap-x-7">
+          <div className="grid grid-cols-1 md:gap-5 lg:grid-cols-3 xl:grid-cols-4 2xl:gap-x-7">
             <div className="w-full shrink-0">
               <SearchStores />
             </div>
@@ -35,6 +35,7 @@ export default function StoresPage() {
           <StoresList />
         </Suspense>
       </motion.section>
+      <BackgroundShapes />
     </main>
   );
 }

@@ -40,7 +40,7 @@ export default function Input(props: TProps) {
       <div className="label pt-0">
         <span
           className={cn(
-            "label-text text-base font-medium text-font-color dark:text-font-color-dark sm:text-lg",
+            "label-text text-base font-medium text-gray-4 sm:text-lg",
             props.classNames?.label,
           )}>
           {props.label}
@@ -53,7 +53,7 @@ export default function Input(props: TProps) {
         name={props.name}
         placeholder={props.placeholder}
         className={cn(
-          "input w-full bg-neutral-300 placeholder:text-gray-500 dark:bg-neutral-800",
+          "input w-full border !border-neutral-4 bg-white placeholder:text-gray-500",
           props.classNames?.input,
           props.error?.message && "border-2 !border-red-500",
         )}

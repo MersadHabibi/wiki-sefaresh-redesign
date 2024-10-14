@@ -42,7 +42,7 @@ export default function NewStoreForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="grid w-full grid-cols-6 gap-6 overflow-hidden rounded-lg bg-neutral-200 p-5 text-start dark:bg-neutral-900 sm:p-8 xl:gap-x-10 xl:gap-y-8">
+      className="grid w-full grid-cols-6 gap-6 overflow-hidden rounded-lg border border-neutral-4 bg-white p-5 text-start text-gray-4 sm:p-8 xl:gap-x-10 xl:gap-y-8">
       <Input
         classNames={{
           container: "col-span-6",
@@ -91,14 +91,14 @@ export default function NewStoreForm() {
       />
       <label className="form-control col-span-6 w-full">
         <div className="label pt-0">
-          <span className="label-text text-base font-medium text-font-color dark:text-font-color-dark sm:text-lg">
+          <span className="label-text text-base font-medium text-gray-4 sm:text-lg">
             فعالیت فروشگاه
           </span>
         </div>
         <textarea
           placeholder="مثال: فروشگاه لباس, فروشگاه کامپیوتر"
           className={cn(
-            "textarea max-h-[400px] w-full bg-neutral-300 py-4 text-base placeholder:text-gray-500 dark:bg-neutral-800",
+            "textarea max-h-[400px] w-full border border-neutral-4 bg-white py-4 text-base placeholder:text-gray-500",
             errors.activityField?.message && "border-2 !border-red-500",
           )}
           {...register("activityField" as any)}
@@ -112,7 +112,7 @@ export default function NewStoreForm() {
       </label>
       <button
         disabled={loading}
-        className="btn btn-primary col-span-6 h-12 w-full border-none bg-primary text-base font-medium text-font-color-dark disabled:bg-primary-disable">
+        className="btn btn-primary col-span-6 h-12 w-full border-none bg-primary-default text-base font-medium text-white hover:bg-primary-4 disabled:opacity-70">
         {loading ? (
           <span className="loading loading-spinner loading-sm text-white"></span>
         ) : (

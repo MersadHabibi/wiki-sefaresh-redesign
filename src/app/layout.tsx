@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import Head from "next/head";
+import BackgroundShapes from "@/components/templates/BackgroundShapes";
 
 export const metadata: Metadata = {
   title: {
@@ -53,7 +54,7 @@ export default function RootLayout({
       </Head>
       <body
         className={cn(
-          "min-h-dvh overflow-y-auto overflow-x-hidden bg-white pt-16 text-base font-normal text-gray-4 sm:pt-20 sm:text-base",
+          "relative min-h-dvh overflow-y-auto overflow-x-hidden bg-white pt-16 text-base font-normal text-gray-4 sm:pt-20 sm:text-base",
           FIranSans.className,
         )}>
         <ApolloClientProvider>
@@ -61,6 +62,7 @@ export default function RootLayout({
           {children}
           <Toaster />
           <Footer />
+          {/* <BackgroundShapes /> */}
         </ApolloClientProvider>
       </body>
     </html>

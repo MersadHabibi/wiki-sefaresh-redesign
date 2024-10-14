@@ -6,6 +6,7 @@ import StoreSelectBox from "./_components/StoreSelectBox";
 import { Suspense } from "react";
 import { Metadata } from "next";
 import * as motion from "framer-motion/client";
+import BackgroundShapes from "@/components/templates/BackgroundShapes";
 
 export const metadata: Metadata = {
   title: "تجربه ها",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function ExperiencePage() {
   return (
-    <main className="h-fit pb-20 pt-10">
+    <main className="relative z-10 h-fit pb-20 pt-10">
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -35,6 +36,7 @@ export default function ExperiencePage() {
           </div>
         </Suspense>
       </motion.section>
+      <BackgroundShapes />
     </main>
   );
 }
