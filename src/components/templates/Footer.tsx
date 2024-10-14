@@ -39,7 +39,7 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="sticky top-full border-t border-neutral-4 bg-white ">
+    <footer className="sticky top-full z-10 border-t border-neutral-4 bg-white">
       <div className="container flex flex-col gap-x-20 gap-y-14 py-20 md:flex-row">
         <div className="shrink-0">
           <p className="text-base font-semibold sm:text-xl">
