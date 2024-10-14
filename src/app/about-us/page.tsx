@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 export default function AboutUsPage() {
   return (
-    <main className="container relative z-10 my-16 overflow-x-hidden bg-neutral-200 px-10 pb-10 pt-8 dark:bg-neutral-900 xs:rounded-lg">
+    <main className="container relative z-10 my-16 bg-neutral-200 px-10 pb-10 pt-8 dark:bg-neutral-900 xs:rounded-lg">
       <h1 className={cn("text-3xl font-bold sm:text-4xl", FMorabba.className)}>
         ویکی سفارش چیه؟
       </h1>

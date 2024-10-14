@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function StoresPage() {
   return (
-    <main className="relative z-10 h-fit overflow-x-hidden pb-20 pt-10">
+    <main className="relative z-10 h-fit pb-20 pt-10">
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

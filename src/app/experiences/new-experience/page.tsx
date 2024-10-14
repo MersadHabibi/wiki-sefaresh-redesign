@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function NewExperiencePage() {
   return (
-    <main className="relative z-10 h-fit overflow-x-hidden bg-white pb-20 pt-10 lg:pb-20 lg:pt-10">
+    <main className="relative z-10 h-fit bg-white pb-20 pt-10 lg:pb-20 lg:pt-10">
       <section className="container">
         <div className="mb-5 flex h-fit w-full items-center gap-x-2 rounded-lg bg-[#FFCC00] px-4 py-3 font-medium text-gray-4 sm:gap-x-4 sm:px-6 md:text-lg ">
           <AlertOctagonIcon className="size-6 shrink-0 sm:size-7" />

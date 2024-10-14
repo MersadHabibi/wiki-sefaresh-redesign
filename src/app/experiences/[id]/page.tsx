@@ -43,7 +43,7 @@ export default function ExperiencePage({
   };
 }) {
   return (
-    <main className="relative z-10 h-fit overflow-x-hidden bg-neutral-100 pb-20 pt-10 dark:bg-neutral-950 lg:pb-20 lg:pt-10">
+    <main className="relative z-10 h-fit bg-neutral-100 pb-20 pt-10 dark:bg-neutral-950 lg:pb-20 lg:pt-10">
       <section className="container">
         <div className="mb-5 flex h-14 w-full items-center gap-x-2 rounded-lg bg-warning/80 px-4 font-medium text-black sm:gap-x-4 sm:px-6 md:text-lg ">
           <CircleAlertIcon className="size-6 shrink-0 sm:size-7" />

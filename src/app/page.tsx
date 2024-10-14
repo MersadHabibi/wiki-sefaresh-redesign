@@ -6,7 +6,7 @@ import PopularStores from "@/components/templates/PopularStores";
 
 export default function Home() {
   return (
-    <main className="relative z-[10] overflow-x-hidden">
+    <main className="relative z-[10]">
       <Hero />
       <PopularStores />
       <LastExperiences />
