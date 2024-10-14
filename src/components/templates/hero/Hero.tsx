@@ -135,7 +135,7 @@ export default function Hero() {
           </div>
           <h1
             className={cn(
-              "text-[27px] font-extrabold xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl",
+              "text-[27px]/9 font-extrabold xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl",
               FMorabba.className,
             )}>
             <span className="text-primary-default">ویکی سِفارش</span>

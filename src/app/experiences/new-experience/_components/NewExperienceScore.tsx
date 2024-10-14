@@ -19,7 +19,7 @@ export default function NewExperienceScore(props: TProps) {
   return (
     <label className="form-control col-span-6 w-full md:col-span-3 lg:col-span-3">
       <div className="label pt-0">
-        <span className="label-text text-base font-medium text-font-color dark:text-font-color-dark sm:text-lg">
+        <span className="text-font-color label-text text-base font-medium text-gray-4 sm:text-lg">
           امتیاز
         </span>
       </div>
@@ -32,32 +32,32 @@ export default function NewExperienceScore(props: TProps) {
         <input
           type="radio"
           name="rating-8"
-          className="mask mask-star-2 bg-orange-400"
+          className="mask mask-star-2 bg-[#FFCC00]"
           onChange={() => setScoreValue(1)}
           defaultChecked
         />
         <input
           type="radio"
           name="rating-8"
-          className="mask mask-star-2 bg-orange-400"
+          className="mask mask-star-2 bg-[#FFCC00]"
           onChange={() => setScoreValue(2)}
         />
         <input
           type="radio"
           name="rating-8"
-          className="mask mask-star-2 bg-orange-400"
+          className="mask mask-star-2 bg-[#FFCC00]"
           onChange={() => setScoreValue(3)}
         />
         <input
           type="radio"
           name="rating-8"
-          className="mask mask-star-2 bg-orange-400"
+          className="mask mask-star-2 bg-[#FFCC00]"
           onChange={() => setScoreValue(4)}
         />
         <input
           type="radio"
           name="rating-8"
-          className="mask mask-star-2 bg-orange-400"
+          className="mask mask-star-2 bg-[#FFCC00]"
           onChange={() => setScoreValue(5)}
         />
       </div>

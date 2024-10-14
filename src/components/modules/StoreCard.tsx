@@ -62,7 +62,7 @@ export default function StoreCard(
       </div>
       <Link
         href={`/stores/${store?.id}`}
-        className="btn btn-primary sticky top-full mt-4 w-full rounded-md border-none bg-gray-4 text-lg font-medium text-white hover:bg-black">
+        className="btn btn-primary sticky top-full mt-4 w-full rounded-md border-none bg-gray-4 text-base font-medium text-white hover:bg-black sm:text-lg">
         <span>دیدن جزئیات</span>
         <EyeIcon className="size-5" />
       </Link>

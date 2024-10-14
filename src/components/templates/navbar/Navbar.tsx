@@ -68,7 +68,7 @@ export default function Navbar() {
             </NavLink>
             <NavLink
               href={"/experiences/new-experience"}
-              className="btn !h-11 min-h-0 rounded-md bg-gray-4 px-7 font-normal text-white">
+              className="btn !h-11 min-h-0 rounded-md bg-gray-4 px-7 font-normal text-white [&.active]:bg-black">
               ثبت تجربه
             </NavLink>
           </div>

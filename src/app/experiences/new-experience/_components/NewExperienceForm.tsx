@@ -76,7 +76,7 @@ export default function NewExperienceForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="grid w-full grid-cols-6 gap-6 overflow-hidden rounded-lg bg-neutral-200 p-5 text-start dark:bg-neutral-900 sm:p-8 xl:gap-x-10 xl:gap-y-8"
+      className="grid w-full grid-cols-6 gap-6 overflow-hidden rounded-lg border border-neutral-4 bg-white p-5 text-start sm:p-8 xl:gap-x-10 xl:gap-y-8"
       autoComplete="off">
       <Suspense>
         <StoreNameInput
@@ -124,14 +124,14 @@ export default function NewExperienceForm() {
       />
       <label className="form-control col-span-6 w-full">
         <div className="label pt-0">
-          <span className="label-text text-base font-medium text-font-color dark:text-font-color-dark sm:text-lg">
+          <span className="label-text text-base font-medium text-gray-4 sm:text-lg">
             شرح تجربه
           </span>
         </div>
         <textarea
           placeholder="لطفا از حرف های کلی (سفارش بدی بود) استفاده نکنید و جزئیات تجربه خود را بنویسید"
           className={cn(
-            "textarea max-h-[400px] w-full bg-neutral-300 py-4 text-base placeholder:text-gray-500 dark:bg-neutral-800",
+            "textarea max-h-[400px] w-full border border-neutral-4 bg-white py-4 text-base placeholder:text-gray-500",
             errors.body?.message && "border-2 !border-red-500",
           )}
           {...register("body" as any)}
@@ -143,7 +143,7 @@ export default function NewExperienceForm() {
       </label>
       <button
         disabled={loading}
-        className="text-font-color-white btn btn-primary col-span-6 h-12 w-full border-none bg-primary text-base font-medium text-font-color-dark disabled:bg-primary-disable">
+        className="btn btn-primary col-span-6 h-12 w-full border-none bg-primary-default text-base font-medium text-white hover:bg-primary-4 disabled:opacity-70">
         {loading ? (
           <span className="loading loading-spinner loading-sm text-white"></span>
         ) : (

@@ -156,10 +156,10 @@ export default function StoreNameInput(props: TProps) {
       register={props.register}
       error={props.error}>
       {isFocused ? (
-        <div className="absolute left-0 right-0 top-full z-10 mt-1 h-fit max-h-44 w-full overflow-y-auto rounded-md border border-neutral-400 bg-neutral-300 dark:border-neutral-600 dark:bg-neutral-800">
+        <div className="absolute left-0 right-0 top-full z-10 mt-1 h-fit max-h-44 w-full overflow-y-auto rounded-md border border-neutral-4 bg-white">
           {loading ? (
             <div className="flex items-center justify-center py-5">
-              <span className="loading loading-spinner loading-sm text-white"></span>
+              <span className="loading loading-spinner loading-sm text-neutral-6"></span>
             </div>
           ) : (
             <>
@@ -167,8 +167,8 @@ export default function StoreNameInput(props: TProps) {
                 <div
                   key={store?.id}
                   className={cn(
-                    "w-full cursor-pointer px-4 py-3 text-start hover:bg-neutral-400/40",
-                    selectedIndex === index && "bg-neutral-400/40",
+                    "w-full cursor-pointer px-4 py-3 text-start hover:bg-neutral-2",
+                    selectedIndex === index && "bg-neutral-2",
                   )}
                   onClick={() => {
                     setStoreName(store?.name || "");
