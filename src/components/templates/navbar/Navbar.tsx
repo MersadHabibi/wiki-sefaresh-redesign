@@ -37,7 +37,7 @@ export default function Navbar() {
       transition={{ duration: 0.7 }}
       className="fixed left-0 right-0 top-0 z-50 !h-16 w-full shrink-0 overflow-hidden border-b border-b-neutral-4 bg-neutral-1/50 backdrop-blur-[4px] sm:!h-20">
       <div className="mx-auto flex h-full max-w-[1700px] items-center justify-between px-5">
-        <div className="flex items-center gap-x-4">
+        <div className="flex items-center gap-x-2">
           <Logo />
           <Link
             href={"/"}

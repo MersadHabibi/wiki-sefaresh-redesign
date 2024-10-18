@@ -102,7 +102,7 @@ export default function MobileSidebarMenu() {
             )}
             onClick={(event) => event.stopPropagation()}>
             <div className="flex items-center justify-between pt-2">
-              <div className="flex items-center gap-x-3">
+              <div className="flex items-center gap-x-2">
                 <Logo />
                 <Link
                   href={"/"}

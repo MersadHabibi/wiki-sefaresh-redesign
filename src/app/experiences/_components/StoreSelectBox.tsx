@@ -8,6 +8,7 @@ import { useLazyQuery, useQuery } from "@apollo/client";
 import { ChevronDownIcon, XIcon } from "lucide-react";
 import { redirect, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { useMediaQuery, useOnClickOutside } from "usehooks-ts";
 
 type TStore = {
@@ -44,7 +45,7 @@ export default function StoreSelectBox() {
   };
 
   useOnClickOutside(selectBox, () => {
-    setIsOpen(false);
+    isMDDevice && setIsOpen(false);
   });
 
   useEffect(() => {
@@ -82,7 +83,9 @@ export default function StoreSelectBox() {
           "flex h-16 cursor-pointer items-center justify-between rounded-md border border-neutral-4 bg-white px-6 font-medium xl:w-96",
           isOpen && "bg-neutral-1",
         )}
-        onClick={() => setIsOpen(!isOpen)}>
+        onClick={() => {
+          setIsOpen(!isOpen);
+        }}>
         {getStoreLoading ? (
           <div className="flex w-full items-center justify-center py-4">
             <span className="loading loading-spinner loading-sm text-black"></span>
@@ -114,40 +117,49 @@ export default function StoreSelectBox() {
           />
         )}
       </div>
-      {isOpen && (
-        <>
-          <div
-            className={cn(
-              "fixed inset-0 z-[60] size-full w-full bg-black/30 opacity-0 backdrop-blur-sm transition-all md:hidden",
-              isOpen && "visible opacity-100",
-            )}
-            onClick={() => setIsOpen(false)}></div>
-          <div className="fixed bottom-0 left-0 right-0 z-[60] mt-2 w-full overflow-hidden rounded-t-lg border border-neutral-4 bg-white font-medium shadow-lg shadow-black/10 md:absolute md:bottom-auto md:top-full md:rounded-lg">
-            <input
-              className="h-14 w-full !border-b border-neutral-400 bg-transparent px-4 outline-none md:h-12"
-              type="text"
-              placeholder="جستجو..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <div className="flex h-64 flex-col items-start justify-start overflow-y-auto md:max-h-40">
-              {loading ? (
-                <div className="flex w-full items-center justify-center py-4">
-                  <span className="loading loading-spinner loading-sm text-black"></span>
-                </div>
-              ) : null}
-              {data?.stores.data.map((store) => (
-                <button
-                  className="block w-full px-4 py-3 text-start hover:bg-neutral-400/50"
-                  key={store?.id}
-                  onClick={() => store && selectStoreHandler(store)}>
-                  {store?.name}
-                </button>
-              ))}
+      {isOpen &&
+        createPortal(
+          <>
+            <div
+              className={cn(
+                "fixed inset-0 z-[60] size-full w-full bg-black/30 opacity-0 backdrop-blur-sm transition-all md:hidden",
+                isOpen && "visible opacity-100",
+              )}
+              onClick={() => {
+                console.log("click");
+                setIsOpen(false);
+              }}></div>
+            <div
+              className="fixed bottom-0 left-0 right-0 z-[60] mt-2 w-full overflow-hidden rounded-t-lg border border-neutral-4 bg-white font-medium shadow-lg shadow-black/10 md:absolute md:bottom-auto md:top-full md:rounded-lg"
+              onClick={() => {
+                console.log("clikc2");
+              }}>
+              <input
+                className="h-14 w-full !border-b border-neutral-400 bg-transparent px-4 outline-none md:h-12"
+                type="text"
+                placeholder="جستجو..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+              <div className="flex h-64 flex-col items-start justify-start overflow-y-auto md:max-h-40">
+                {loading ? (
+                  <div className="flex w-full items-center justify-center py-4">
+                    <span className="loading loading-spinner loading-sm text-black"></span>
+                  </div>
+                ) : null}
+                {data?.stores.data.map((store) => (
+                  <button
+                    className="block w-full px-4 py-3 text-start hover:bg-neutral-400/50"
+                    key={store?.id}
+                    onClick={() => store && selectStoreHandler(store)}>
+                    {store?.name}
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
-        </>
-      )}
+          </>,
+          isMDDevice ? selectBox.current || document.body : document.body,
+        )}
     </div>
   );
 }

@@ -25,17 +25,11 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl" className="font-sans">
       <Head>
-        <title>ویکی سفارش</title>
-        <meta
-          name="description"
-          content="پلتفرمی برای به اشتراک گذاری تجربیات از سفارشات آنلاین ✨"
-        />
         <meta property="og:title" content="ویکی سفارش" />
         <meta
           property="og:description"
           content="پلتفرمی برای به اشتراک گذاری تجربیات از سفارشات آنلاین ✨"
         />
-        <meta property="og:image" content="./favicon.ico" />
 
         <meta name="keywords" content="ویکی سفارش, wiki sefaresh" />
         <meta name="author" content="مرصاد حبیبی" />

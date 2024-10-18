@@ -14,8 +14,8 @@ export default function AboutUsPage() {
     <main className="relative z-10">
       <div className="container">
         <section className="my-16 rounded-md border border-neutral-4 bg-white">
-          <div className="flex items-center gap-x-3 border-b border-neutral-2 px-5 py-4 sm:gap-x-4 sm:px-8 sm:py-6">
-            <Logo className="!w-10 sm:!w-12" height={300} width={300} />
+          <div className="flex items-center gap-x-1 border-b border-neutral-2 px-5 py-4 sm:gap-x-2 sm:px-8 sm:py-6">
+            <Logo className="" height={300} width={300} />
             <Link
               href={"/"}
               className={cn(

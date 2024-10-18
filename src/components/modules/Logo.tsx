@@ -12,13 +12,15 @@ export default function Logo({
 }) {
   return (
     <>
-      <Image
-        className={cn("w-10 sm:w-11", className)}
-        src={"/images/logo.png"}
-        alt="ویکی تجربه لوگو"
-        width={width}
-        height={height}
-      />
+      <div className={cn("w-10 sm:w-[50px]", className)}>
+        <Image
+          className={cn("w-full object-contain")}
+          src={"/svg/logo.svg"}
+          alt="ویکی تجربه لوگو"
+          width={width}
+          height={height}
+        />
+      </div>
     </>
   );
 }
